@@ -22,7 +22,7 @@ const TextAnimation = ({ text }:any) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className=" text-blue font-bold text-[5rem]"
+      className=" text-blue font-bold lg:text-[5rem] text-[4rem]"
     >
       {displayText}
     </motion.h3>
@@ -38,7 +38,7 @@ export default function Home() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className=" text-gray-400 font-bold text-[2rem]">
+        className=" text-gray-400 font-bold lg:text-[2rem] text-[1.5rem]">
           Bem-Vindo(a)
         </motion.h1>
       <TextAnimation text="Makertree" />
@@ -46,7 +46,7 @@ export default function Home() {
       initial={{ opacity: 0, scale: 0.9}}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 1, duration: .5 }}
-      href="/sali_produtor" className=" uppercase text-purple-dark border border-purple-dark py-2 px-4 rounded-lg mt-10 hover:bg-purple hover:text-gray-100 hover:border-purple duration-500">Acessar Agora</motion.a>
+      href="/sali_produtor" className=" uppercase text-purple-dark border border-purple-dark py-2 px-4 rounded-lg mt-10 hover:bg-purple hover:text-gray-100 hover:border-purple duration-500 text-center">Acessar Agora</motion.a>
     </main>
   );
 }

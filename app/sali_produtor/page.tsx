@@ -7,15 +7,20 @@ import { motion } from "framer-motion"
 
 export default function Home() {
   return (
-    <main className="flex w-full h-screen flex-col items-center justify-center">   
-      <div className=" bg-gray-500 rounded-lg shadow-lg overflow-hidden">
+    <main className="flex max-w-screen h-screen flex-col items-center justify-center">   
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95}}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{duration: .2 }}
+        className=" bg-gray-500 rounded-lg shadow-lg overflow-hidden"
+      >
 
         <header>
           <div className="flex gap-10 items-center bg-gray-600 px-8 py-5 ">
             <motion.div 
               initial={{ opacity: 0, scale: 0.95}}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{duration: .5 }}
+              transition={{delay: .5 ,duration: .5 }}
             >
               <Image width={400} height={400} className=" w-[5rem] h-[5rem] rounded-full border-blue border-solid border border-lg p-[.2rem]" src="https://github.com/SaliProdutor.png" alt="Foto"/>
             </motion.div>
@@ -54,7 +59,7 @@ export default function Home() {
             ))
           ))}
         </motion.div>
-      </div>
+      </motion.div>
     </main>
   );
 }
