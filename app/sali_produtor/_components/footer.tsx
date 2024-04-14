@@ -1,0 +1,15 @@
+'use client'
+import { useState } from "react"
+
+export function Footer(){
+    const [ano, setAno] = useState(2023)
+    const anoAtual = new Date().getFullYear()
+    return(
+        <footer className="flex absolute items-center justify-center bottom-0 h-10 w-full">
+            <span className="text-gray-400 text-sm">
+                &copy; {anoAtual === ano ? ano : `${ano} - ${anoAtual}`} <a className=" hover:text-gray-300 duration-1000" href="https://digitalmakerpro.com" target="_blank">Digital Maker
+                Pro</a>. Todos os direitos reservados.
+            </span>
+        </footer>
+    )    
+}
