@@ -38,7 +38,7 @@ export default function Home() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className=" text-gray-400 font-center font-bold lg:text-[2rem] text-[1.5rem]">
+        className=" text-gray-400 text-center font-bold lg:text-[2rem] text-[1.5rem]">
           Bem-Vindo(a)
         </motion.h1>
       <TextAnimation text="Makertree" />
