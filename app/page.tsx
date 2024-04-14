@@ -22,7 +22,7 @@ const TextAnimation = ({ text }:any) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className=" text-blue font-bold lg:text-[5rem] text-[4rem]"
+      className=" text-blue font-bold lg:text-[5rem] text-[4rem] w-full"
     >
       {displayText}
     </motion.h3>
@@ -38,7 +38,7 @@ export default function Home() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className=" text-gray-400 text-center font-bold lg:text-[2rem] text-[1.5rem]">
+        className=" text-gray-400 w-full text-center font-bold lg:text-[2rem] text-[1.5rem]">
           Bem-Vindo(a)
         </motion.h1>
       <TextAnimation text="Makertree" />
