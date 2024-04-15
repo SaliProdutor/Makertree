@@ -28,12 +28,6 @@ export const DB = [
                     path: "https://www.linkedin.com/in/saliprodutor/"
                 },
                 {
-                    id: "02",
-                    categoryId: "04", // corrected property name
-                    name: "Site Digital Maker",
-                    path: "https://www.digitalmakerpro.com/"
-                },
-                {
                     id: "03",
                     categoryId: "01", // corrected property name
                     name: "ULANZI Lapela sem fio J12 para iPhone iPad",
