@@ -57,6 +57,12 @@ export const DB = [
                     name: "Portfólio - GitHub",
                     path: "https://github.com/SaliProdutor"
                 },
+                {
+                    id: "08",
+                    categoryId: "01", // corrected property name
+                    name: "SOKANI X60 Mini",
+                    path: "https://s.click.aliexpress.com/e/_DdSd2TR"
+                },
             ]
         }
     }
