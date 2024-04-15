@@ -34,7 +34,7 @@ const TextAnimation = ({ text }:any) => {
 export default function Home() {
   
   return (
-    <main className="flex items-center justify-center">
+    <main className="flex flex-1 items-center justify-center">
       <div className="flex flex-1 flex-col items-center justify-center p-24">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
