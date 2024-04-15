@@ -6,7 +6,7 @@ import { Footer } from "./sali_produtor/_components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Maketree",
+  title: "Makertree",
   description: "Seus links em um só lugar",
 };
 
