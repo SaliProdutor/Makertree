@@ -17,8 +17,8 @@ export function Carrossel({ categoria }: CarrosselProps) {
 
     const [Layout, setLayout] = useState(false)
 
-    const active = " text-gray-200"
-    const inativo = " text-gray-600"
+    const active = " text-gray-200 text-2xl"
+    const inativo = " text-gray-600 text-2xl"
 
     function handleAlternaVertical(){
         if(Layout !== false){
