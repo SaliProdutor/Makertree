@@ -5,8 +5,14 @@ const nextConfig = {
           {
             protocol: 'https',
             hostname: 'github.com',
-            port: '',
-            pathname: '/SaliProdutor.png',
+          },
+          {
+            protocol: 'https',
+            hostname: 'm.media-amazon.com',
+          },
+          {
+            protocol: 'https',
+            hostname: 'ae01.alicdn.com',
           },
         ],
       },

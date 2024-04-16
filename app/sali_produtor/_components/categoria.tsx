@@ -7,15 +7,11 @@ interface CategoriasProps {
 }
 
 export function Categorias({ categoria }: CategoriasProps) {
-    console.log("Categoria fornecida:", categoria);
-
     // Encontrar o objeto de categoria correspondente à categoria fornecida
     const category = DB[0].data.categories.find(cat => cat.id === categoria);
-    console.log("Categoria encontrada:", category);
-
+    
     // Filtrar os links com base na categoria fornecida
     const filteredLinks = DB[0].data.links.filter(link => link.categoryId === categoria);
-    console.log("Links filtrados:", filteredLinks);
 
     return (
         <div>

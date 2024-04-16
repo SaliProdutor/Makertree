@@ -3,8 +3,13 @@ import { Categorias } from "./_components/categoria";
 import { DB } from "./db";
 import Image from "next/image";
 import { motion } from "framer-motion"
+import { useState } from "react";
+import { Carrossel } from "./_components/carrossel";
 
 export default function Home() {
+  const getPhoto:any = DB.map(item => item.data.photo)
+  const [photo, setPhoto] = useState(`${getPhoto}`)
+
   return (
     <main className="flex max-w-screen z-99 flex-col items-center mt-20 mb-20"> 
       <div>
@@ -22,7 +27,8 @@ export default function Home() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{delay: .5 ,duration: .5 }}
               >
-                <Image width={400} height={400} className=" w-[5rem] h-[5rem] rounded-full border-blue border-solid border border-lg p-[.2rem]" src="https://github.com/SaliProdutor.png" alt="Foto"/>
+
+                <Image width={400} height={400} className=" w-[5rem] h-[5rem] rounded-full border-blue border-solid border border-lg p-[.2rem]" src={photo} alt="Foto"/>
               </motion.div>
               <div>
                 <motion.h1
@@ -30,13 +36,13 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: .80 ,duration: 1 }}
                   className=" font-bold text-blue text-2xl"
-                >Sali Produtor</motion.h1>
+                >{DB.map(item => item.data.name)}</motion.h1>
                 <motion.p 
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1 ,duration: 1 }}
                   className=" text-gray-200"
-                >Links</motion.p>
+                >{DB.map(item => item.data.description)}</motion.p>
               </div> 
             </div>
           </header>
@@ -55,6 +61,7 @@ export default function Home() {
                   transition={{ delay: index * .6, duration: 1 }}
                 >
                   <Categorias key={category.id} categoria={category.id}/>
+                  <Carrossel key={category.id} categoria={category.id}/>
                 </motion.div>
               ))
             ))}
