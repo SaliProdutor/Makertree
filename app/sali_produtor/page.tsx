@@ -11,7 +11,7 @@ export default function Home() {
   const [photo, setPhoto] = useState(`${getPhoto}`)
 
   return (
-    <main className="flex max-w-screen z-99 flex-col items-center mt-20 mb-20"> 
+    <main className="flex max-w-screen z-99 flex-col items-center lg:mt-20 mb-20 mt-0"> 
       <div>
         <motion.div 
           initial={{ opacity: 0, scale: 0.95}}
