@@ -1,9 +1,9 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DB } from "../db";
 import { motion } from "framer-motion"
 import Image from 'next/image';
-import Link from 'next/link';
+import { TbLayoutDistributeHorizontal, TbLayoutDistributeVertical } from "react-icons/tb";
 
 interface CarrosselProps {
     categoria: string;
@@ -15,19 +15,41 @@ export function Carrossel({ categoria }: CarrosselProps) {
     // Filtrar os links com base na categoria fornecida
     const filteredLinks = DB[0].data.links.filter(link => link.categoryId === categoria);
 
+    const [Layout, setLayout] = useState(true)
+
+    const active = " text-gray-200"
+    const inativo = " text-gray-600"
+
+    function handleAlternaVertical(){
+        if(Layout !== false){
+            setLayout(false)
+        }
+    }
+    function handleAlternaHorizontal(){
+        if(Layout !== true){
+            setLayout(true)
+        }
+    }
+
     return (
         <>
         {category?.name === "Meus Equipamentos" ? 
         <div className='flex flex-col max-w-[20rem] lg:max-w-[25rem]'>
             {category && 
-            <h1
-                className="text-gray-100 font-bold mb-4 mt-6 text-center"
-            >{category.name}</h1>}
+            <div className=' flex justify-between items-center'>
+                <h1
+                    className="text-gray-100 font-bold mb-4 mt-6 text-center"
+                >{category.name}</h1>
+                <div className=' flex gap-2'>
+                    <TbLayoutDistributeHorizontal className={Layout === true ? active : inativo} onClick={handleAlternaHorizontal}/>
+                    <TbLayoutDistributeVertical className={Layout === false ? active : inativo} onClick={handleAlternaVertical}/>
+                </div>
+            </div>
+            }
             <div className='flex'>
+                {Layout === true ? 
                 <ul className='flex overflow-x-scroll gap-4 w-[25rem]'>
-                
                     {filteredLinks.map((link, index) => (
-
                         <a href={link.path} className='flex' target="_blank" rel="noopener noreferrer">
                             <motion.li 
                                 initial={{ opacity: 0, y: 10 }}
@@ -44,6 +66,21 @@ export function Carrossel({ categoria }: CarrosselProps) {
                         </a>
                     ))}
                 </ul>
+                :
+                <ul>
+                    {filteredLinks.map((link, index) => (
+                        <motion.li 
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * .2,duration: .2 }}
+                            className='flex justify-center items-center mb-4 bg-purple-dark lg:hover:bg-purple duration-1000 lg:hover:shadow-2xl shadow-blue py-4 px-8 rounded-lg' 
+                            key={index}
+                        >
+                            <a href={link.path} className=' text-gray-100 text-center' target="_blank" rel="noopener noreferrer">{link.name}</a>
+                        </motion.li>
+                    ))}
+                </ul>
+                }
             </div>
         </div>
          : 

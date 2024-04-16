@@ -9,18 +9,22 @@ export const DB = [
                 {
                     id: "01",
                     name: "Meus Equipamentos",
+                    layout: true
                 },
                 {
                     id: "02",
-                    name: "Design"
+                    name: "Design",
+                    layout: true
                 },
                 {
                     id: "03",
-                    name: "Dev"
+                    name: "Dev",
+                    layout: true
                 },
                 {
                     id: "04",
-                    name: "Outras Redes"
+                    name: "Outras Redes",
+                    layout: true
                 }
             ],
             links:[
