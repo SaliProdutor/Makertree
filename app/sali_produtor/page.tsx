@@ -17,7 +17,7 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.95}}
           animate={{ opacity: 1, scale: 1 }}
           transition={{duration: .2 }}
-          className=" bg-gray-500 rounded-lg shadow-lg overflow-hidden"
+          className=" bg-gray-500 lg:min-w-[30rem] lg:max-w-[30rem] min-w-[23rem] max-w-[23rem] rounded-lg shadow-lg overflow-hidden"
         >
 
           <header>

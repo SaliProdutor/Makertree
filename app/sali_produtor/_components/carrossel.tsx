@@ -15,7 +15,7 @@ export function Carrossel({ categoria }: CarrosselProps) {
     // Filtrar os links com base na categoria fornecida
     const filteredLinks = DB[0].data.links.filter(link => link.categoryId === categoria);
 
-    const [Layout, setLayout] = useState(true)
+    const [Layout, setLayout] = useState(false)
 
     const active = " text-gray-200"
     const inativo = " text-gray-600"
@@ -33,8 +33,8 @@ export function Carrossel({ categoria }: CarrosselProps) {
 
     return (
         <>
-        {category?.name === "Meus Equipamentos" ? 
-        <div className='flex flex-col max-w-[20rem] lg:max-w-[25rem]'>
+        {category?.name === "Meus Equipamentos" ?
+        <div className='flex flex-col w-full'>
             {category && 
             <div className=' flex justify-between items-center'>
                 <h1
@@ -48,7 +48,7 @@ export function Carrossel({ categoria }: CarrosselProps) {
             }
             <div className='flex'>
                 {Layout === false ? 
-                <ul className='flex overflow-x-scroll gap-4 w-[25rem]'>
+                <ul className='flex overflow-x-scroll gap-4'>
                     {filteredLinks.map((link, index) => (
                         <a href={link.path} className='flex' target="_blank" rel="noopener noreferrer">
                             <motion.li 
@@ -67,7 +67,7 @@ export function Carrossel({ categoria }: CarrosselProps) {
                     ))}
                 </ul>
                 :
-                <ul>
+                <ul className='w-full'>
                     {filteredLinks.map((link, index) => (
                         <motion.li 
                             initial={{ opacity: 0, y: 10 }}
