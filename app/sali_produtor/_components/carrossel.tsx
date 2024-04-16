@@ -54,7 +54,7 @@ export function Carrossel({ categoria }: CarrosselProps) {
                             <motion.li 
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                transition={{ delay: index * .2,duration: .2 }}
+                                transition={{ delay: index * .1,duration: .2 }}
                                 className='flex flex-col justify-start gap-4 items-center mb-4 bg-purple-dark lg:hover:bg-purple duration-1000 lg:hover:shadow-2xl pb-2 shadow-blue rounded-lg' 
                                 key={index}
                             >
@@ -72,7 +72,7 @@ export function Carrossel({ categoria }: CarrosselProps) {
                         <motion.li 
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * .4,duration: .2 }}
+                            transition={{ delay: index * .1,duration: .2 }}
                             className='flex justify-center items-center mb-4 bg-purple-dark lg:hover:bg-purple duration-1000 lg:hover:shadow-2xl shadow-blue py-4 px-8 rounded-lg' 
                             key={index}
                         >
