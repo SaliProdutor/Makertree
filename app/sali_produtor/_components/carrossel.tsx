@@ -41,13 +41,13 @@ export function Carrossel({ categoria }: CarrosselProps) {
                     className="text-gray-100 font-bold mb-4 mt-6 text-center"
                 >{category.name}</h1>
                 <div className=' flex gap-2'>
-                    <TbLayoutDistributeHorizontal className={Layout === false ? active : inativo} onClick={handleAlternaHorizontal}/>
-                    <TbLayoutDistributeVertical className={Layout === true ? active : inativo} onClick={handleAlternaVertical}/>
+                    <TbLayoutDistributeHorizontal className={Layout === true ? active : inativo} onClick={handleAlternaHorizontal}/>
+                    <TbLayoutDistributeVertical className={Layout === false ? active : inativo} onClick={handleAlternaVertical}/>
                 </div>
             </div>
             }
             <div className='flex'>
-                {Layout === true ? 
+                {Layout === false ? 
                 <ul className='flex overflow-x-scroll gap-4 w-[25rem]'>
                     {filteredLinks.map((link, index) => (
                         <a href={link.path} className='flex' target="_blank" rel="noopener noreferrer">
