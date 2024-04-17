@@ -23,7 +23,6 @@ export function Categorias({ categoria }: CategoriasProps) {
                 >{category.name}</h1>}
                 <ul>
                     {filteredLinks.map((link, index) => (
-                        <li className=' flex '>
                             <a href={link.path} className='flex' target="_blank" rel="noopener noreferrer">
                                 <motion.li 
                                     initial={{ opacity: 0, y: 10 }}
@@ -35,7 +34,6 @@ export function Categorias({ categoria }: CategoriasProps) {
                                     <a className=' text-gray-100 text-center'>{link.name}</a>
                                 </motion.li>
                             </a>
-                        </li>
                     ))}
                 </ul>
             </div>

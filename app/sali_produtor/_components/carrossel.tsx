@@ -50,7 +50,6 @@ export function Carrossel({ categoria }: CarrosselProps) {
                 {Layout === false ? 
                 <ul className='flex overflow-x-scroll gap-4'>
                     {filteredLinks.map((link, index) => (
-                        <li>
                             <a href={link.path} className='flex' target="_blank" rel="noopener noreferrer">
                                 <motion.li 
                                     initial={{ opacity: 0 }}
@@ -65,13 +64,11 @@ export function Carrossel({ categoria }: CarrosselProps) {
                                     
                                 </motion.li>
                             </a>
-                        </li>
                     ))}
                 </ul>
                 :
                 <ul className='w-full'>
                     {filteredLinks.map((link, index) => (
-                        <li className=' flex '>
                             <a href={link.path} className='flex' target="_blank" rel="noopener noreferrer">
                                 <motion.li 
                                     initial={{ opacity: 0, y: 10 }}
@@ -83,7 +80,6 @@ export function Carrossel({ categoria }: CarrosselProps) {
                                     <a className=' text-gray-100 text-center'>{link.name}</a>
                                 </motion.li>
                             </a>
-                        </li>
                     ))}
                 </ul>
                 }
