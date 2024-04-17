@@ -50,34 +50,40 @@ export function Carrossel({ categoria }: CarrosselProps) {
                 {Layout === false ? 
                 <ul className='flex overflow-x-scroll gap-4'>
                     {filteredLinks.map((link, index) => (
-                        <a href={link.path} className='flex' target="_blank" rel="noopener noreferrer">
-                            <motion.li 
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: index * - 1,duration: .2 }}
-                                className='flex flex-col justify-start gap-4 items-center mb-4 bg-purple-dark lg:hover:bg-purple duration-1000 lg:hover:shadow-2xl pb-2 shadow-blue rounded-lg' 
-                                key={index}
-                            >
-                                
-                                    <Image width={400} height={400} className=" max-w-[10rem] max-h-[10rem] min-h-[10rem] rounded-lg border-blue border-solid border border-lg p-[.2rem]" src={link.photo} alt="Foto"/>
-                                    <a className=' text-gray-100 text-center p-2'>{link.name}</a>
-                                
-                            </motion.li>
-                        </a>
+                        <li>
+                            <a href={link.path} className='flex' target="_blank" rel="noopener noreferrer">
+                                <motion.li 
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: index * - 1,duration: .2 }}
+                                    className='flex flex-col justify-start gap-4 items-center mb-4 bg-purple-dark lg:hover:bg-purple duration-1000 lg:hover:shadow-2xl pb-2 shadow-blue rounded-lg' 
+                                    key={index}
+                                >
+                                    
+                                        <Image width={400} height={400} className=" max-w-[10rem] max-h-[10rem] min-h-[10rem] rounded-lg border-blue border-solid border border-lg p-[.2rem]" src={link.photo} alt="Foto"/>
+                                        <a className=' text-gray-100 text-center p-2'>{link.name}</a>
+                                    
+                                </motion.li>
+                            </a>
+                        </li>
                     ))}
                 </ul>
                 :
                 <ul className='w-full'>
                     {filteredLinks.map((link, index) => (
-                        <motion.li 
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * - 1,duration: .2 }}
-                            className='flex justify-center items-center mb-4 bg-purple-dark lg:hover:bg-purple duration-1000 lg:hover:shadow-2xl shadow-blue py-4 px-8 rounded-lg' 
-                            key={index}
-                        >
-                            <a href={link.path} className=' text-gray-100 text-center' target="_blank" rel="noopener noreferrer">{link.name}</a>
-                        </motion.li>
+                        <li>
+                            <a href={link.path} className='flex' target="_blank" rel="noopener noreferrer">
+                                <motion.li 
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: index * - 1,duration: .2 }}
+                                    className='flex justify-center items-center mb-4 bg-purple-dark lg:hover:bg-purple duration-1000 lg:hover:shadow-2xl shadow-blue py-4 px-8 rounded-lg' 
+                                    key={index}
+                                >
+                                    <a className=' text-gray-100 text-center'>{link.name}</a>
+                                </motion.li>
+                            </a>
+                        </li>
                     ))}
                 </ul>
                 }
