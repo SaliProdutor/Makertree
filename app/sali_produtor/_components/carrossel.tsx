@@ -59,7 +59,7 @@ export function Carrossel({ categoria }: CarrosselProps) {
                                 key={index}
                             >
                                 
-                                    <Image width={400} height={400} className=" max-w-[10rem] max-h-[10rem] rounded-lg border-blue border-solid border border-lg p-[.2rem]" src={link.photo} alt="Foto"/>
+                                    <Image width={400} height={400} className=" max-w-[10rem] max-h-[10rem] min-h-[10rem] rounded-lg border-blue border-solid border border-lg p-[.2rem]" src={link.photo} alt="Foto"/>
                                     <a className=' text-gray-100 text-center p-2'>{link.name}</a>
                                 
                             </motion.li>
