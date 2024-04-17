@@ -71,7 +71,7 @@ export function Carrossel({ categoria }: CarrosselProps) {
                 :
                 <ul className='w-full'>
                     {filteredLinks.map((link, index) => (
-                        <li>
+                        <li className=' flex '>
                             <a href={link.path} className='flex' target="_blank" rel="noopener noreferrer">
                                 <motion.li 
                                     initial={{ opacity: 0, y: 10 }}
