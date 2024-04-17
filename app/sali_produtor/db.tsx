@@ -104,7 +104,7 @@ export const DB = [
                     id: "11",
                     type: "Inuminação",
                     categoryId: "01",
-                    photo: "https://m.media-amazon.com/images/I/51utnMWPTrL._AC_SL1500_.jpg",
+                    photo: "https://m.media-amazon.com/images/I/61wCGQ3199L._AC_SL1500_.jpg",
                     name: "SOKANI P25 Key Light",
                     path: "https://amzn.to/3w3Bkj5"
                 },
