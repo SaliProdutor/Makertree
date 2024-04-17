@@ -88,7 +88,7 @@ export const DB = [
                     id: "09",
                     type: "Microfone",
                     categoryId: "01",
-                    photo: "https://m.media-amazon.com/images/I/61vXwLemjJL._AC_SX425_.jpg",
+                    photo: "https://m.media-amazon.com/images/I/61vXwLemjJL._AC_SL1500_.jpg",
                     name: "HOLLYLAND Lark M2",
                     path: "https://amzn.to/444C6Jb"
                 },
