@@ -41,8 +41,8 @@ export function Carrossel({ categoria }: CarrosselProps) {
                     className="text-gray-100 font-bold mb-4 mt-6 text-center"
                 >{category.name}</h1>
                 <div className=' flex gap-2'>
-                    <TbLayoutDistributeHorizontal className={Layout === true ? active : inativo} onClick={handleAlternaHorizontal}/>
                     <TbLayoutDistributeVertical className={Layout === false ? active : inativo} onClick={handleAlternaVertical}/>
+                    <TbLayoutDistributeHorizontal className={Layout === true ? active : inativo} onClick={handleAlternaHorizontal}/>
                 </div>
             </div>
             }
