@@ -56,7 +56,7 @@ export const DB = [
                     id: "05",
                     type: "Inuminação",
                     categoryId: "01",
-                    photo: "https://m.media-amazon.com/images/I/6163+CiWvdS._AC_SY300_SX300_.jpg",
+                    photo: "https://m.media-amazon.com/images/I/41KujFhGgPS._AC_.jpg",
                     name: "YONGNUO YN360 III Pro 5500K",
                     path: "https://amzn.to/3xtSHtP"
                 },
