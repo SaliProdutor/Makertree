@@ -86,10 +86,10 @@ export function Carrossel({ categoria }: CarrosselProps) {
                 {Layout === "List" ? 
                     <ul className='w-full grid grid-cols-1 gap-4'>
                     {filteredLinks.map((link, index) => (
-                        <li className='flex flex-1 min-h-[5rem]' key={index}>
+                        <li className='flex flex-1' key={index}>
                             <Link href={link.path} className='flex-1' target="_blank" rel="noopener noreferrer">
-                                <div className='flex flex-row h-full gap-2 items-center justify-start  bg-purple-dark duration-1000 rounded-lg lg:hover:bg-purple lg:hover:shadow-2xl'>
-                                    <div className='max-w-[5rem] max-h-[5rem] '>
+                                <div className='flex flex-row min-h-[5rem] max-h-[5rem] gap-2 items-center justify-start  bg-purple-dark duration-1000 rounded-lg lg:hover:bg-purple lg:hover:shadow-2xl'>
+                                    <div className='w-[5rem] h-auto '>
                                         <Image width={150} height={150} className="w-full aspect-square bg-cover rounded-lg border-blue border-solid border border-lg p-[.2rem]" src={link.photo} alt="Foto"/>
                                     </div>
                                     <p className='text-gray-100 pr-2'>{link.name}</p>
