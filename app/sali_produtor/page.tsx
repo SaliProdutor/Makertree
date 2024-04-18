@@ -12,11 +12,12 @@ export default function Home() {
 
   return (
     <main className="flex max-w-screen z-99 flex-col items-center lg:mt-20 mb-20 mt-0"> 
+
       <div>
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95}}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{duration: .2 }}
+          initial={{ opacity: 0, y: 10}}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{delay: .5 ,duration: .5 }}
           className=" bg-gray-500 lg:min-w-[30rem] lg:max-w-[30rem] min-w-[23rem] max-w-[23rem] rounded-lg shadow-lg overflow-hidden"
         >
 
@@ -47,25 +48,18 @@ export default function Home() {
             </div>
           </header>
 
-          <motion.div 
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 1 }}
-          className=" px-8 py-4 ">
+          <div className="px-8 py-4 flex-1">
+
             {DB.map(item => (
               item.data.categories.map((category, index) => (
-                <motion.div 
-                  key={category.id}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * .6, duration: 1 }}
-                >
+                <div key={category.id}>
                   <Categorias key={category.id} categoria={category.id}/>
                   <Carrossel key={category.id} categoria={category.id}/>
-                </motion.div>
+                </div>
               ))
             ))}
-          </motion.div>
+
+          </div>
         </motion.div>
       </div> 
     </main>

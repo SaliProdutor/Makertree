@@ -4,6 +4,8 @@ import { DB } from "../db";
 import { motion } from "framer-motion"
 import Image from 'next/image';
 import { TbLayoutDistributeHorizontal, TbLayoutDistributeVertical } from "react-icons/tb";
+import { IoGridOutline } from 'react-icons/io5';
+import Link from 'next/link';
 
 interface CarrosselProps {
     categoria: string;
@@ -15,65 +17,108 @@ export function Carrossel({ categoria }: CarrosselProps) {
     // Filtrar os links com base na categoria fornecida
     const filteredLinks = DB[0].data.links.filter(link => link.categoryId === categoria);
 
-    const [Layout, setLayout] = useState(false)
+    const [Layout, setLayout] = useState("Scroll")
 
-    const active = " text-gray-200 text-2xl"
-    const inativo = " text-gray-600 text-2xl"
+    const active = " text-purple text-2xl"
+    const inativo = " text-gray-300 text-2xl"
 
-    function handleAlternaVertical(){
-        if(Layout !== false){
-            setLayout(false)
+    function handleAlternaList(){
+        if(Layout !== "List"){
+            setLayout("List")
         }
     }
-    function handleAlternaHorizontal(){
-        if(Layout !== true){
-            setLayout(true)
+    function handleAlternaScroll(){
+        if(Layout !== "Scroll"){
+            setLayout("Scroll")
+        }
+    }
+
+    function handleAlternaGrid(){
+        if(Layout !== "Grid"){
+            setLayout("Grid")
         }
     }
 
     return (
         <>
         {category?.name === "Meus Equipamentos" ?
-        <div className='flex flex-col w-full'>
+
+        <div className='flex flex-col'>
+
             {category && 
-            <div className=' flex justify-between items-center'>
-                <h1
-                    className="text-gray-100 font-bold mb-4 mt-6 text-center"
-                >{category.name}</h1>
-                <div className=' flex gap-2'>
-                    <TbLayoutDistributeVertical className={Layout === false ? active : inativo} onClick={handleAlternaVertical}/>
-                    <TbLayoutDistributeHorizontal className={Layout === true ? active : inativo} onClick={handleAlternaHorizontal}/>
-                </div>
-            </div>
+                <header className='flex justify-between items-center'>
+                    <h1
+                        className="text-gray-100 font-bold mb-4 mt-6 text-center"
+                    >{category.name}</h1>
+                    <div className=' flex gap-2'>
+                        <TbLayoutDistributeVertical className={Layout === "Scroll" ? active : inativo} onClick={handleAlternaScroll}/>
+                        <TbLayoutDistributeHorizontal className={Layout === "List" ? active : inativo} onClick={handleAlternaList}/>
+                        <IoGridOutline className={Layout === "Grid" ? active : inativo} onClick={handleAlternaGrid}/>
+                    </div>
+                </header>
             }
-            <div className='flex'>
-                {Layout === false ? 
-                <ul className='flex min-w-full overflow-x-scroll gap-4'>
-                    {filteredLinks.map((link, index) => (
-                        <a href={link.path} className='flex' target="_blank" rel="noopener noreferrer">
-                            <li 
-                                className='flex flex-col justify-start gap-4 items-center mb-4 bg-purple-dark lg:hover:bg-purple duration-1000 lg:hover:shadow-2xl pb-2 shadow-blue rounded-lg' 
-                                key={index}
-                            >
-                                    <Image width={150} height={150} className=" max-w-[10rem] max-h-[10rem] min-w-[10rem] min-h-[10rem] rounded-lg border-blue border-solid border border-lg p-[.2rem]" src={link.photo} alt="Foto"/>
-                                    <a className=' text-gray-100 text-center p-2'>{link.name}</a>
+
+            <div className='flex w-full'>
+
+                { /* Se o layout for Scroll */ }
+
+                {Layout === "Scroll" ? 
+                    <ul className='flex overflow-x-scroll pb-2 w-full gap-4'>
+                        {filteredLinks.map((link, index) => (
+                            
+                            <li className='flex min-w-40' key={index}>
+                                
+                                <Link href={link.path} className='flex-1' target="_blank" rel="noopener noreferrer">
+                                    <div className='flex flex-col h-full gap-2 items-center justify-start  bg-purple-dark duration-1000 rounded-lg lg:hover:bg-purple lg:hover:shadow-2xl'>
+                                        <div className='max-w-[20rem] max-h-[20rem] '>
+                                            <Image width={150} height={150} className="w-full aspect-square bg-cover rounded-lg border-blue border-solid border border-lg p-[.2rem]" src={link.photo} alt="Foto"/>
+                                        </div>
+                                        <p className=' text-gray-100 text-center p-2'>{link.name}</p>
+                                    </div>
+                                </Link>
                             </li>
-                        </a>
-                    ))}
-                </ul>
-                :
-                <ul className='flex flex-col'>
+                        ))}
+                    </ul>:<></>
+                }
+
+                { /* Se o layout for List */ }
+                
+                {Layout === "List" ? 
+                    <ul className='w-full grid grid-cols-1 gap-4'>
                     {filteredLinks.map((link, index) => (
-                        <a href={link.path} className='flex' target="_blank" rel="noopener noreferrer">
-                            <li 
-                                className='flex flex-1 justify-center items-center mb-4 bg-purple-dark lg:hover:bg-purple duration-1000 lg:hover:shadow-2xl shadow-blue py-4 px-8 rounded-lg' 
-                                key={index}
-                            >
-                                <a className=' text-gray-100 text-center'>{link.name}</a>
-                            </li>
-                        </a>
+                        <li className='flex flex-1' key={index}>
+                            <Link href={link.path} className='flex-1' target="_blank" rel="noopener noreferrer">
+                                <div className='flex flex-row h-full gap-2 items-center justify-start  bg-purple-dark duration-1000 rounded-lg lg:hover:bg-purple lg:hover:shadow-2xl'>
+                                    <div className='max-w-[5rem] max-h-[5rem] '>
+                                        <Image width={150} height={150} className="w-full aspect-square bg-cover rounded-lg border-blue border-solid border border-lg p-[.2rem]" src={link.photo} alt="Foto"/>
+                                    </div>
+                                    <p className='text-gray-100 pr-2'>{link.name}</p>
+                                </div>
+                            </Link>
+                        </li>
                     ))}
-                </ul>
+                </ul>:<></>
+                }
+
+                { /* Se o layout for Grid */ }
+                
+                {Layout === "Grid" ? 
+                    <ul className='w-full grid grid-cols-1 lg:grid-cols-2 gap-4'>
+                        {filteredLinks.map((link, index) => (  
+
+                            <li className='flex gap-4' key={index}>
+                                <Link href={link.path} className='flex-1' target="_blank" rel="noopener noreferrer">
+                                    <div className='flex h-full justify-start flex-col  bg-purple-dark duration-1000 rounded-lg lg:hover:bg-purple lg:hover:shadow-2xl'>
+                                        <div className='max-w-[20rem] max-h-[20rem] '>
+                                            <Image width={150} height={150} className="w-full aspect-square bg-cover rounded-lg border-blue border-solid border border-lg p-[.2rem]" src={link.photo} alt="Foto"/>
+                                        </div>
+                                        
+                                        <p className=' text-gray-100 text-center p-2'>{link.name}</p>
+                                    </div>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>:<></>
                 }
             </div>
         </div>
