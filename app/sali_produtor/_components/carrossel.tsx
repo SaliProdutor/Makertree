@@ -69,9 +69,11 @@ export function Carrossel({ categoria }: CarrosselProps) {
                             <li className='flex min-w-40' key={index}>
                                 
                                 <Link href={link.path} className='flex-1' target="_blank" rel="noopener noreferrer">
-                                    <div className='flex pb-2 flex-col h-full gap-2 items-center justify-start  bg-purple-dark duration-1000 rounded-lg lg:hover:bg-purple lg:hover:shadow-2xl'>
-                                        <div className='max-w-[25rem] max-h-[25rem] '>
+                                    <div className='flex overflow-hidden pb-2 flex-col h-full gap-2 items-center justify-start  bg-purple-dark duration-1000 rounded-lg lg:hover:bg-purple lg:hover:shadow-2xl'>
+                                        <div className='w-full flex items-center justify-center max-w-[25rem] max-h-[25rem]'>
+                                            
                                             <Image width={100} height={100} className="w-full aspect-square object-cover bg-cover rounded-lg border-blue border-solid border border-lg p-[.2rem]" src={link.photo} alt="Foto"/>
+                                           
                                         </div>
                                         <p className=' text-gray-100 text-center p-2'>{link.name}</p>
                                     </div>
