@@ -29,7 +29,7 @@ export default function Home() {
                 transition={{delay: .5 ,duration: .5 }}
               >
 
-                <Image width={150} height={150} className=" w-[5rem] h-[5rem] rounded-full border-blue border-solid border border-lg p-[.2rem]" src={photo} alt="Foto"/>
+                <Image width={100} height={100} className=" w-[5rem] h-[5rem] rounded-full border-blue border-solid border border-lg p-[.2rem]" src={photo} alt="Foto"/>
               </motion.div>
               <div>
                 <motion.h1
