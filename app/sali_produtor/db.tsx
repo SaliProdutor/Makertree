@@ -25,6 +25,11 @@ export const DB = [
                     id: "04",
                     name: "Outras Redes",
                     layout: true
+                },
+                {
+                    id: "05",
+                    name: "IPTV",
+                    layout: true
                 }
             ],
             links:[
@@ -46,7 +51,7 @@ export const DB = [
                 },
                 {
                     id: "04",
-                    type: "Inuminação",
+                    type: "Iluminação",
                     categoryId: "01",
                     photo: "https://ae01.alicdn.com/kf/S7ece2418253545f383249a736b1fd172d/Ulanzi-Mini-LED-Camera-Light-l-mpada-magn-tica-recarreg-vel-para-Vlog-YouTube-Tik-Tok.jpg_.webp",
                     name: "ULANZI VL49 Pro",
@@ -54,7 +59,7 @@ export const DB = [
                 },
                 {
                     id: "05",
-                    type: "Inuminação",
+                    type: "Iluminação",
                     categoryId: "01",
                     photo: "https://m.media-amazon.com/images/I/41KujFhGgPS._AC_.jpg",
                     name: "YONGNUO YN360 III Pro 5500K",
@@ -78,7 +83,7 @@ export const DB = [
                 },
                 {
                     id: "08",
-                    type: "Inuminação",
+                    type: "Iluminação",
                     categoryId: "01",
                     photo: "https://ae01.alicdn.com/kf/S22ad7fa9dbc949389e7fcd78a0f72f69a/Sokani-X60-Mini-LED-Video-Light-com-Octagon-Softbox-60W-55cm-2m-Light-Stand-Bowens-Mount.jpg_.webp",
                     name: "SOKANI X60 Mini",
@@ -94,7 +99,7 @@ export const DB = [
                 },
                 {
                     id: "10",
-                    type: "Inuminação",
+                    type: "Iluminação",
                     categoryId: "01",
                     photo: "https://m.media-amazon.com/images/I/71Y5Hd28SyL._AC_SY355_.jpg",
                     name: "ULANZI Desktop key light",
@@ -102,11 +107,19 @@ export const DB = [
                 },
                 {
                     id: "11",
-                    type: "Inuminação",
+                    type: "Iluminação",
                     categoryId: "01",
                     photo: "https://m.media-amazon.com/images/I/61wCGQ3199L._AC_SL1500_.jpg",
                     name: "SOKANI P25 Key Light",
                     path: "https://amzn.to/3w3Bkj5"
+                },
+                {
+                    id: "12",
+                    type: "Inuminação",
+                    categoryId: "01",
+                    photo: "",
+                    name: "IPTV | Salimports",
+                    path: "https://iptv.salimports.com"
                 },
             ]
         }
