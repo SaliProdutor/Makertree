@@ -116,7 +116,7 @@ export const DB = [
                 {
                     id: "12",
                     type: "Inuminação",
-                    categoryId: "01",
+                    categoryId: "05",
                     photo: "",
                     name: "IPTV | Salimports",
                     path: "https://iptv.salimports.com"
