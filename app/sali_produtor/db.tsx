@@ -121,6 +121,14 @@ export const DB = [
                     name: "IPTV | Salimports",
                     path: "https://iptv.salimports.com"
                 },
+                {
+                    id: "12",
+                    type: "Inuminação",
+                    categoryId: "04",
+                    photo: "",
+                    name: "TikTok",
+                    path: "https://www.tiktok.com/@sali_produtor"
+                },
             ]
         }
     }
