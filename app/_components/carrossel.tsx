@@ -1,21 +1,28 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import { DB } from "../db";
+import { DBpages } from '../DB/pages';
 import { motion } from "framer-motion"
 import Image from 'next/image';
 import { TbLayoutDistributeHorizontal, TbLayoutDistributeVertical } from "react-icons/tb";
 import { IoGridOutline } from 'react-icons/io5';
 import Link from 'next/link';
 
+interface CategoriasProps {
+    id: number;
+    name: string;
+    layout: boolean
+}
 interface CarrosselProps {
-    categoria: string;
+    categoria: CategoriasProps
+    userId: number | undefined
 }
 
-export function Carrossel({ categoria }: CarrosselProps) {
-    const category = DB[0].data.categories.find(cat => cat.id === categoria);
+export function Carrossel({ categoria, userId }: CarrosselProps) {
+    const category = categoria
 
     // Filtrar os links com base na categoria fornecida
-    const filteredLinks = DB[0].data.links.filter(link => link.categoryId === categoria);
+    const links = DBpages.find(user_id => user_id.id_user === userId);
+    const filteredLinks = links?.links.filter(link => link.categoryId === categoria.id);
 
     const [Layout, setLayout] = useState("Scroll")
 
@@ -64,7 +71,7 @@ export function Carrossel({ categoria }: CarrosselProps) {
 
                 {Layout === "Scroll" ? 
                     <ul className='flex overflow-x-scroll pb-2 w-full gap-4'>
-                        {filteredLinks.map((link, index) => (
+                        {filteredLinks?.map((link, index) => (
                             
                             <li className='flex min-w-40' key={index}>
                                 
@@ -87,7 +94,7 @@ export function Carrossel({ categoria }: CarrosselProps) {
                 
                 {Layout === "List" ? 
                     <ul className='w-full grid grid-cols-1 gap-4'>
-                    {filteredLinks.map((link, index) => (
+                    {filteredLinks?.map((link, index) => (
                         <li className='flex flex-1' key={index}>
                             <Link href={link.path} className='flex-1' target="_blank" rel="noopener noreferrer">
                                 <div className='flex flex-row min-h-[5rem] max-h-[5rem] gap-2 items-center justify-start  bg-purple-dark duration-1000 rounded-lg lg:hover:bg-purple lg:hover:shadow-2xl'>
@@ -106,7 +113,7 @@ export function Carrossel({ categoria }: CarrosselProps) {
                 
                 {Layout === "Grid" ? 
                     <ul className='w-full grid grid-cols-1 lg:grid-cols-2 gap-4'>
-                        {filteredLinks.map((link, index) => (  
+                        {filteredLinks?.map((link, index) => (  
 
                             <li className='flex gap-4' key={index}>
                                 <Link href={link.path} className='flex-1' target="_blank" rel="noopener noreferrer">
