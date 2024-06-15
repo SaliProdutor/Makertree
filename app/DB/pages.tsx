@@ -2,16 +2,7 @@ export const DBpages = [
     // LINKS SALI_PRODUTOR //
     {
         id_user: 1,
-        theme: [
-            {
-                colors:[
-                    {
-                        id: 1,
-                        primary: ""
-                    },
-                ]
-            }
-        ],
+        primary: false,
         categories: [
             {
                 id: 1,
@@ -141,16 +132,7 @@ export const DBpages = [
     // LINKS DIGITAL MAKER PRO //
     {
         id_user: 2,
-        theme: [
-            {
-                colors:[
-                    {
-                        id: 1,
-                        primary: ""
-                    },
-                ]
-            }
-        ],
+        primary: false,
         categories: [
             {
                 id: 1,
@@ -173,31 +155,73 @@ export const DBpages = [
     // LINKS SALIMPORTS //
     {
         id_user: 3,
+        primary: true,
         theme: [
             {
                 colors:[
-                    {
-                        id: 1,
-                        primary: ""
-                    },
+                    {primary: '#fbc92b'},
+                    {secundary: "#b98e00"},
+                    {hover: "#fbc92b"},
                 ]
             }
         ],
         categories: [
             {
                 id: 1,
-                name: "Design",
-                layout: true
+                name: "Sites",
+                layout: false
+            },
+            {
+                id: 2,
+                name: "Contato",
+                layout: false
+            },
+            {
+                id: 3,
+                name: "Feedbacks",
+                layout: false
             },
         ],
         links:[
             {
                 id: 1,
-                type: "Portifólio",
+                type: "site",
                 categoryId: 1,
                 photo: "",
-                name: "Portfólio - Behance",
-                path: "https://www.behance.net/sali_produtor"
+                name: "IPTV",
+                path: "https://iptv.salimports.com"
+            },
+            {
+                id: 2,
+                type: "site",
+                categoryId: 1,
+                photo: "",
+                name: "E-commerce",
+                path: "https://salimports.com"
+            },
+            {
+                id: 3,
+                type: "site",
+                categoryId: 3,
+                photo: "",
+                name: "Seu feedback é importante!",
+                path: "https://g.page/r/CdtFSaVoi8QAEBM/review"
+            },
+            {
+                id: 4,
+                type: "site",
+                categoryId: 1,
+                photo: "",
+                name: "Estamos no Google",
+                path: "https://maps.app.goo.gl/C9rRqfEQZ3aNhvVr7"
+            },
+            {
+                id: 5,
+                type: "site",
+                categoryId: 2,
+                photo: "",
+                name: "Entre em contato",
+                path: "https://api.whatsapp.com/send?phone=+5551999392576&text=Ol%C3%A1%21"
             },
         ]
     },

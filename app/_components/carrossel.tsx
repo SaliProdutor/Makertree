@@ -13,11 +13,14 @@ interface CategoriasProps {
     layout: boolean
 }
 interface CarrosselProps {
-    categoria: CategoriasProps
-    userId: number | undefined
+    categoria: CategoriasProps;
+    userId: number | undefined;
+    primary?: string;
+    secundary?: string;
+    hover?: string
 }
 
-export function Carrossel({ categoria, userId }: CarrosselProps) {
+export function Carrossel({ categoria, userId, primary, secundary, hover }: CarrosselProps) {
     const category = categoria
 
     // Filtrar os links com base na categoria fornecida
@@ -55,7 +58,7 @@ export function Carrossel({ categoria, userId }: CarrosselProps) {
             {category && 
                 <header className='flex justify-between items-center'>
                     <h1
-                        className="text-gray-100 font-bold mb-4 mt-6 text-center"
+                        className="text-gray-100 font-bold mb-4 mt-6 text-center cursor-default"
                     >{category.name}</h1>
                     <div className=' flex gap-2'>
                         <TbLayoutDistributeVertical className={Layout === "Scroll" ? active : inativo} onClick={handleAlternaScroll}/>

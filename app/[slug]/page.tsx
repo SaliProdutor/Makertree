@@ -35,13 +35,22 @@ interface PropsLink {
     id_user: number;
     theme: PropsTheme;
     categories: Category[];
-    links: Link[] | undefined;
+    links: Link[];
 }
 
 interface PageProps {
     params: { slug: string };
 }
 
+interface ThemeProps{
+  colors: ColorsProps | undefined
+}
+
+interface ColorsProps{
+  primary: string | undefined;
+  secundary: string | undefined;
+  hover: string | undefined;
+}
 
 
 export default function LinkPage({ params }: PageProps){
@@ -55,6 +64,8 @@ export default function LinkPage({ params }: PageProps){
     const getPhoto:any = user?.photo
     const [photo, setPhoto] = useState(`${getPhoto}`)
     
+    
+    const primary = links?.primary
 
     return (
         <main className="flex max-w-screen z-99 flex-col items-center lg:mt-20 mb-20 mt-0"> 
@@ -75,20 +86,26 @@ export default function LinkPage({ params }: PageProps){
                       transition={{delay: .5 ,duration: .5 }}
                     >
                     
-                      <Image width={70} height={70} className=" w-[5rem] h-[5rem] object-cover bg-cover rounded-full border-blue border-solid border border-lg p-[.2rem]" src={photo} alt="Foto"/>
+                      <Image 
+                        width={70} 
+                        height={70} 
+                        className={primary === true ? 'w-[5rem] h-[5rem] border-[#fbc92b] object-cover bg-cover rounded-full border-solid border border-lg p-[.2rem]' : 'w-[5rem] h-[5rem] border-blue object-cover bg-cover rounded-full border-solid border border-lg p-[.2rem]'} 
+                        src={photo} 
+                        alt="Foto"
+                      />
                     </motion.div>
                     <div>
                       <motion.h1
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: .80 ,duration: 1 }}
-                        className=" font-bold text-blue text-2xl"
+                        className={primary === true ? 'font-bold text-2xl cursor-default text-[#fbc92b]' : 'font-bold text-2xl cursor-default text-blue'}
                       >{user?.name}</motion.h1>
                       <motion.p 
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 1 ,duration: 1 }}
-                        className=" text-gray-200"
+                        className=" text-gray-200 cursor-default"
                       >{user?.description}</motion.p>
                     </div> 
                   </div>
@@ -99,8 +116,7 @@ export default function LinkPage({ params }: PageProps){
                 {
                     links?.categories.map((category, index) => (
                       <div key={category.id}>
-                        <Categorias key={category.id} categoria={{id:category.id, name:category.name, layout:category.layout}} userId={id}/>
-
+                        <Categorias primary={primary} key={category.id} categoria={{id:category.id, name:category.name, layout:category.layout}} userId={id}/>
                         <Carrossel key={category.id} categoria={{id:category.id, name:category.name, layout:category.layout}} userId={id}/>
 
                       </div>
