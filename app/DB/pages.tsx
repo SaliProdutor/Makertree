@@ -12,22 +12,27 @@ export const DBpages = [
             {
                 id: 2,
                 name: "Design",
-                layout: true
+                layout: false
             },
             {
                 id: 3,
                 name: "Dev",
-                layout: true
+                layout: false
             },
             {
                 id: 4,
                 name: "Outras Redes",
-                layout: true
+                layout: false
             },
             {
                 id: 5,
                 name: "IPTV",
-                layout: true
+                layout: false
+            },
+            {
+                id: 6,
+                name: "Minhas empresas",
+                layout: false
             }
         ],
         links:[
@@ -126,6 +131,22 @@ export const DBpages = [
                 photo: "",
                 name: "TikTok",
                 path: "https://www.tiktok.com/@sali_produtor"
+            },
+            {
+                id: 13,
+                type: "Social",
+                categoryId: 6,
+                photo: "",
+                name: "Digital Maker",
+                path: "https://www.instagram.com/digital_maker_pro"
+            },
+            {
+                id: 14,
+                type: "Social",
+                categoryId: 6,
+                photo: "",
+                name: "Salimports",
+                path: "https://www.instagram.com/sali_imports/"
             },
         ]
     },
