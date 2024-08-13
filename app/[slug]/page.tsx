@@ -75,7 +75,7 @@ export default function LinkPage({ params }: PageProps){
                 initial={{ opacity: 0, y: 10}}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{delay: .5 ,duration: .5 }}
-                className=" bg-gray-500 lg:min-w-[30rem] lg:max-w-[30rem] min-w-[23rem] max-w-[23rem] rounded-lg shadow-lg overflow-hidden"
+                className=" bg-[#000000] lg:min-w-[30rem] lg:max-w-[30rem] min-w-[23rem] max-w-[23rem] rounded-lg shadow-lg overflow-hidden"
               >
 
                 <header>
