@@ -79,7 +79,7 @@ export default function LinkPage({ params }: PageProps){
               >
 
                 <header>
-                  <div className="flex gap-10 items-center bg-gray-600 px-8 py-5 ">
+                  <div className={primary === true ? 'hidden' : 'flex gap-10 items-center bg-gray-600 px-8 py-5'}>
                     <motion.div 
                       initial={{ opacity: 0, scale: 0.95}}
                       animate={{ opacity: 1, scale: 1 }}
