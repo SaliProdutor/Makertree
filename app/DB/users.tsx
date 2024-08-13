@@ -17,7 +17,7 @@ export const DBusers = [
         id: 3,
         name: "",
         slug: "salimports",
-        description: "Links",
+        description: "",
         photo: "",
     },
 ]
