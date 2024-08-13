@@ -15,9 +15,9 @@ export const DBusers = [
     },
     {
         id: 3,
-        name: "Salimports",
+        name: "",
         slug: "salimports",
         description: "Links",
-        photo: "https://instagram.fpoa47-1.fna.fbcdn.net/v/t51.2885-19/419707224_921383803321945_3537019822424433221_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fpoa47-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=vkNilF5potIQ7kNvgFavNjD&edm=AEhyXUkBAAAA&ccb=7-5&oh=00_AYDXVbU2iJBKwlIQqyWLdijszuMWvJ8NDPHwSbhxgO1L4Q&oe=66726359&_nc_sid=cf751b",
+        photo: "",
     },
 ]
