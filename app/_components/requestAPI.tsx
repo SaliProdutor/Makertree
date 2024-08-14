@@ -1,10 +1,10 @@
 import { createClient } from "@/prismicio";
 
 
-export default function RequestAPI(){
+export default async function RequestAPI(){
     const prismic = createClient()
 
-    const cliente = prismic.getAllByType("cliente")
+    const cliente = await prismic.getAllByType("link", 'links')
     console.log(cliente)
-    return (<a>Ola</a>)
+    return (<a>{}</a>)
 }
