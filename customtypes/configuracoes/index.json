@@ -1,0 +1,119 @@
+{
+  "format": "page",
+  "id": "configuracoes",
+  "label": "Configurações",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "cliente": {
+        "type": "Link",
+        "config": {
+          "label": "Cliente",
+          "select": "document",
+          "customtypes": ["cliente"]
+        }
+      },
+      "background_color_primary": {
+        "type": "Color",
+        "config": {
+          "label": "Background Color Primary",
+          "placeholder": ""
+        }
+      },
+      "background_color_secundary": {
+        "type": "Color",
+        "config": {
+          "label": "Background Color Secundary",
+          "placeholder": ""
+        }
+      },
+      "button_color": {
+        "type": "Color",
+        "config": {
+          "label": "Button Color",
+          "placeholder": ""
+        }
+      },
+      "button_label_color": {
+        "type": "Color",
+        "config": {
+          "label": "Button Label Color",
+          "placeholder": ""
+        }
+      },
+      "button_color_hover": {
+        "type": "Color",
+        "config": {
+          "label": "Button Color Hover",
+          "placeholder": ""
+        }
+      },
+      "button_label_color_hover": {
+        "type": "Color",
+        "config": {
+          "label": "Button Label Color Hover",
+          "placeholder": ""
+        }
+      },
+      "border_radius": {
+        "type": "Select",
+        "config": {
+          "label": "Border Radius",
+          "placeholder": "",
+          "options": [".05", ".03", "1"],
+          "default_value": ".05"
+        }
+      },
+      "marketing": {
+        "type": "Boolean",
+        "config": {
+          "label": "Marketing",
+          "placeholder_false": "false",
+          "placeholder_true": "true",
+          "default_value": true
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  }
+}

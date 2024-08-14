@@ -1,6 +1,7 @@
 'use client'
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react";
+import RequestAPI from "./_components/requestAPI";
 
 const TextAnimation = ({ text }:any) => {
   const [displayText, setDisplayText] = useState("");
@@ -35,6 +36,7 @@ export default function Home() {
   return (
     <main className="flex flex-1 items-center justify-center">
       <div className="flex flex-1 flex-col items-center justify-center p-24">
+      <RequestAPI/>
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -1,0 +1,126 @@
+{
+  "format": "page",
+  "id": "link",
+  "label": "Link",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "categoria": {
+        "type": "Link",
+        "config": {
+          "label": "Categoria",
+          "select": "document",
+          "customtypes": ["categoria"]
+        }
+      },
+      "cliente": {
+        "type": "Link",
+        "config": {
+          "label": "Cliente",
+          "select": "document",
+          "customtypes": ["cliente"]
+        }
+      },
+      "label": {
+        "type": "Text",
+        "config": {
+          "label": "Label",
+          "placeholder": ""
+        }
+      },
+      "url": {
+        "type": "Link",
+        "config": {
+          "label": "URL",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "background_color": {
+        "type": "Color",
+        "config": {
+          "label": "Background Color",
+          "placeholder": ""
+        }
+      },
+      "background_color_hover": {
+        "type": "Color",
+        "config": {
+          "label": "Background Color Hover",
+          "placeholder": ""
+        }
+      },
+      "label_color": {
+        "type": "Color",
+        "config": {
+          "label": "Label Color",
+          "placeholder": ""
+        }
+      },
+      "label_color_hover": {
+        "type": "Color",
+        "config": {
+          "label": "Label Color Hover",
+          "placeholder": ""
+        }
+      },
+      "border_radius": {
+        "type": "Select",
+        "config": {
+          "label": "Border Radius",
+          "placeholder": "",
+          "options": [".03", ".05", "1"]
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  }
+}

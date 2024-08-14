@@ -6,6 +6,7 @@ import { DBusers } from "../DB/users";
 import Image from "next/image";
 import { motion } from "framer-motion"
 import { Carrossel } from "@/app/_components/carrossel";
+import RequestAPI from "../_components/requestAPI";
 
 interface ThemeColor {
     id: number;
@@ -69,7 +70,7 @@ export default function LinkPage({ params }: PageProps){
 
     return (
         <main className="flex max-w-screen z-99 flex-col items-center lg:mt-20 mb-20 mt-0"> 
-
+            
             <div>
               <motion.div 
                 initial={{ opacity: 0, y: 10}}
