@@ -39,15 +39,57 @@ body{
   background-color: #0D0D0D;
 }
 
+.TextoPrimary{
+  color: var(--title-color) !important;
+}
+
+.CategoryTitleColor{
+  color: var(--category-title-color) !important;
+}
+
+.HeaderColor{
+  background-color: var(--header-color) !important;
+}
+
+
+.BorderColor{
+  border-color: var(--border-color) !important;
+  color: var(--button-label-color) !important;
+}
+
+.BackgroundPrimary{
+  background-color: var(--background-primary) !important;
+}
+
+.BackgroundSecondary{
+  background-color: var(--background-secondary) !important;
+}
+
+.ButtonTheme{
+  background-color: var(--button-color) !important;
+}
+
+.Texto{
+  color: var(--button-label-color) !important;
+}
+
+@media (min-width:1025px) {
+  .ButtonTheme:hover{
+    background-color: var(--button-color-hover) !important;
+  }
+
+  .ButtonTheme:hover{
+    color: var(--button-label-color-hover) !important;
+  }
+}
+
+.BorderRadius{
+  border-radius: var(--border-radius) !important;
+}
+
 body, input, textarea, button {
   font-family: ‘Inter’, sans-serif; 
 }
 
-@media only screen and (max-width: 600px) {
-  body{
-    padding-right: 10px !important;
-    padding-left: 10px !important;
-  }
-}
 
 

@@ -374,16 +374,16 @@ interface ConfiguracoesDocumentData {
   cliente: prismic.ContentRelationshipField<"cliente">;
 
   /**
-   * Visible Header field in *Configurações*
+   * Header field in *Configurações*
    *
-   * - **Field Type**: Boolean
+   * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **Default Value**: true
-   * - **API ID Path**: configuracoes.visible_header
+   * - **Default Value**: Visivel
+   * - **API ID Path**: configuracoes.header
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#boolean
+   * - **Documentation**: https://prismic.io/docs/field#select
    */
-  visible_header: prismic.BooleanField;
+  header: prismic.SelectField<"Visivel" | "Oculto", "filled">;
 
   /**
    * Title Color field in *Configurações*

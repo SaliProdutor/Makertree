@@ -5,13 +5,13 @@ interface HeaderProps {
     alt?: string;
     title?: string;
     description?: string;
-    visible: boolean[]
+    visible: any;
 }
 
 const HeaderClient = ({ url, alt, title, description, visible }: HeaderProps) => {
-    const isVisible = visible.includes(true);
+
     return (
-        isVisible &&
+        visible != 'Oculto' &&
         <div>
             <div className={'flex gap-10 items-center HeaderColor px-8 py-5'}>
                 <div>

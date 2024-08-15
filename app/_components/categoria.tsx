@@ -48,6 +48,7 @@ export async function Categorias({ categoria, slug_categoria, userId}: Carrossel
                         target="_blank" 
                         className="
                             flex 
+                            font-bold
                             Texto 
                             flex-1 
                             justify-center 
