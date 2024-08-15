@@ -61,7 +61,7 @@ export default async function LinkPage({ params }: PageProps){
         <main className="BackgroundPrimary min-w-screen min-h-screen justify-between flex flex-col items-center">
             <Theme uid={params.slug} />
             {(billing == 'Ativo' || billing == 'Pendente') && 
-            <div className="flex-1 mt-2 lg:mt-20">
+            <div className="flex-1 mt-2 mx-2 lg:mt-20 lg:mx-0">
                 <LoadingWrapper delay={1} color={2}>
                     <div className="BackgroundSecondary lg:min-w-[30rem] lg:max-w-[30rem] min-w-[23rem] max-w-[23rem] BorderRadius pb-5 shadow-lg overflow-hidden">
                         {billing == 'Pendente' &&
