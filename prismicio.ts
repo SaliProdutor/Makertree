@@ -29,7 +29,7 @@ const routes: prismic.ClientConfig["routes"] = [
   },
   {
     type: "categoria",
-    path: "/",
+    path: "/:uid",
   },
   {
     type: "carrossel",

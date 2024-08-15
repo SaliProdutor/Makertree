@@ -18,6 +18,10 @@ const nextConfig = {
             protocol: 'https',
             hostname: 'instagram.**',
           },
+          {
+            protocol: 'https',
+            hostname: 'images.prismic.io/**',
+          }
         ],
       },
 };

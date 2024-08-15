@@ -1,62 +1,70 @@
+import { createClient } from '@/prismicio';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-//import { DB } from "../sali_produtor/db";
-import { motion } from "framer-motion"
-import { DBpages } from '../DB/pages';
 
-interface CategoriasProps {
-    id: number;
-    name: string;
-    layout: boolean
-}
 
 interface CarrosselProps {
-    categoria: CategoriasProps;
-    userId: number | undefined;
-    primary?: boolean;
+    categoria: string | null;
+    userId: string;
+    slug_categoria: string;
 }
 
-export function Categorias({ categoria, userId, primary}: CarrosselProps) {
+export async function Categorias({ categoria, slug_categoria, userId}: CarrosselProps) {
 
+    const client = createClient();
+
+    const uid = userId
     const category = categoria
 
-    // Filtrar os links com base na categoria fornecida
-    const links = DBpages.find(user_id => user_id.id_user === userId);
-    const filteredLinks = links?.links.filter(link => link.categoryId === categoria.id);
+    // DADOS LINKS
+    async function fetchLinks() {
+        try {
+            const links = await client.getAllByType('link'); 
+            const link = links.filter(item => item.data.slug_client === uid)
+            const linkCategoria = link.filter(item => item.data.slug_categoria === slug_categoria)
+            return linkCategoria;
+        } catch (error) {
+            console.error('Erro ao buscar links:', error);
+            return [];
+        }
+    }
 
-    const [themeColor, setPrimaryColor] = useState('')
-
-        useEffect(() => {
-            if(primary === true){
-                setPrimaryColor(`flex flex-1 justify-center items-center mb-4 bg-[#b98e00] lg:hover:bg-[#fbc92b] duration-1000 lg:hover:shadow-2xl shadow-blue py-4 px-8 rounded-lg`)
-            }else{
-                setPrimaryColor('flex flex-1 justify-center items-center mb-4 bg-purple-dark lg:hover:bg-purple duration-1000 lg:hover:shadow-2xl shadow-blue py-4 px-8 rounded-lg')
-            }
-        },[primary])
+    const links = await fetchLinks();
 
     return (
-        <>
-        {category?.name !== "Meus Equipamentos" ?
-            <div className='w-full'>
-                {category && 
-                <h1
-                    className="text-gray-100 font-bold mb-4 mt-6 text-center cursor-default"
-                >{category.name}</h1>}
-                <ul>
-                    {filteredLinks?.map((link, index) => (
-                        <a href={link.path} target="_blank">
-                            <li
-                                className={themeColor}
-                                key={index}
-                            >
-                                <a rel="noopener noreferrer" className={primary === true ? 'text-black text-center' : 'text-gray-100 text-center'}>{link.name}</a>
-                            </li>
+
+        <div className='w-full px-4'>
+            
+            {links && links.length > 0 && category && ( 
+                <h1 className="CategoryTitleColor font-bold mb-4 mt-6 text-center cursor-default">{category}</h1>
+            )}
+            {links &&
+
+                <div>
+                    {links.map((link, index) => (
+                        <a 
+                        key={link.id} 
+                        href={link.data.url.link_type} 
+                        target="_blank" 
+                        className="
+                            flex 
+                            Texto 
+                            flex-1 
+                            justify-center 
+                            items-center 
+                            my-4  
+                            ButtonTheme 
+                            duration-1000 
+                            lg:hover:shadow-2xl 
+                            shadow-blue 
+                            py-4 px-8 
+                            BorderRadius"
+                        >
+                            {link.data.label}
                         </a>
                     ))}
-                </ul>
-            </div>
-            :
-            <></>
+                </div>
             }
-        </>
+        </div>
     );
 }

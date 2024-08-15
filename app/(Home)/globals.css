@@ -32,11 +32,11 @@ p{
 }
 html{
   overflow-x: hidden !important;
-  background-color: #000000;
 }
 
 body{
   -webkit-font-smoothing: antialiased;
+  background-color: #0D0D0D;
 }
 
 body, input, textarea, button {

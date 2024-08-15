@@ -98,15 +98,37 @@ type CategoriaDocumentDataSlicesSlice = never;
  */
 interface CategoriaDocumentData {
   /**
-   * Categoria field in *Categoria*
+   * order field in *Categoria*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: categoria.order
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  order: prismic.NumberField;
+
+  /**
+   * Name field in *Categoria*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: categoria.categoria
+   * - **API ID Path**: categoria.name
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  categoria: prismic.KeyTextField;
+  name: prismic.KeyTextField;
+
+  /**
+   * Slug Cliente field in *Categoria*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: categoria.slug_cliente
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  slug_cliente: prismic.KeyTextField;
 
   /**
    * Cliente field in *Categoria*
@@ -207,6 +229,17 @@ interface ClienteDocumentData {
   name: prismic.KeyTextField;
 
   /**
+   * Description field in *Cliente*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cliente.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
    * Slug field in *Cliente*
    *
    * - **Field Type**: Text
@@ -251,6 +284,18 @@ interface ClienteDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   empresa_responsavel: prismic.ContentRelationshipField<"empresa">;
+
+  /**
+   * Marketing field in *Cliente*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: cliente.marketing
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  marketing: prismic.SelectField<"true" | "false", "filled">;
 
   /**
    * Slice Zone field in *Cliente*
@@ -329,6 +374,28 @@ interface ConfiguracoesDocumentData {
   cliente: prismic.ContentRelationshipField<"cliente">;
 
   /**
+   * Title Color field in *Configurações*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: configuracoes.title_color
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  title_color: prismic.ColorField;
+
+  /**
+   * Header Color field in *Configurações*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: configuracoes.header_color
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  header_color: prismic.ColorField;
+
+  /**
    * Background Color Primary field in *Configurações*
    *
    * - **Field Type**: Color
@@ -349,6 +416,17 @@ interface ConfiguracoesDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#color
    */
   background_color_secundary: prismic.ColorField;
+
+  /**
+   * Category Title Color field in *Configurações*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: configuracoes.category_title_color
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  category_title_color: prismic.ColorField;
 
   /**
    * Button Color field in *Configurações*
@@ -395,28 +473,27 @@ interface ConfiguracoesDocumentData {
   button_label_color_hover: prismic.ColorField;
 
   /**
+   * Border Color field in *Configurações*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: configuracoes.border_color
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  border_color: prismic.ColorField;
+
+  /**
    * Border Radius field in *Configurações*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **Default Value**: .05
+   * - **Default Value**: 0
    * - **API ID Path**: configuracoes.border_radius
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  border_radius: prismic.SelectField<".05" | ".03" | "1", "filled">;
-
-  /**
-   * Marketing field in *Configurações*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: true
-   * - **API ID Path**: configuracoes.marketing
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  marketing: prismic.BooleanField;
+  border_radius: prismic.SelectField<"0" | ".3" | ".5" | "1", "filled">;
 
   /**
    * Slice Zone field in *Configurações*
@@ -650,6 +727,17 @@ interface LinkDocumentData {
   logo: prismic.ImageField<never>;
 
   /**
+   * Order field in *Link*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link.order
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  order: prismic.KeyTextField;
+
+  /**
    * Categoria field in *Link*
    *
    * - **Field Type**: Content Relationship
@@ -661,6 +749,17 @@ interface LinkDocumentData {
   categoria: prismic.ContentRelationshipField<"categoria">;
 
   /**
+   * Slug Categoria field in *Link*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link.slug_categoria
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  slug_categoria: prismic.KeyTextField;
+
+  /**
    * Cliente field in *Link*
    *
    * - **Field Type**: Content Relationship
@@ -670,6 +769,17 @@ interface LinkDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   cliente: prismic.ContentRelationshipField<"cliente">;
+
+  /**
+   * Slug Client field in *Link*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link.slug_client
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  slug_client: prismic.KeyTextField;
 
   /**
    * Label field in *Link*
@@ -746,7 +856,7 @@ interface LinkDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  border_radius: prismic.SelectField<".03" | ".05" | "1">;
+  border_radius: prismic.SelectField<"0" | ".3" | ".5" | "1">;
 
   /**
    * Slice Zone field in *Link*

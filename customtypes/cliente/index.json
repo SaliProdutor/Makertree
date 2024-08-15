@@ -27,6 +27,13 @@
           "placeholder": ""
         }
       },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": ""
+        }
+      },
       "slug": {
         "type": "Text",
         "config": {
@@ -58,6 +65,15 @@
           "label": "Empresa Responsável",
           "select": "document",
           "customtypes": ["empresa"]
+        }
+      },
+      "marketing": {
+        "type": "Select",
+        "config": {
+          "label": "Marketing",
+          "placeholder": "",
+          "options": ["true", "false"],
+          "default_value": "true"
         }
       },
       "slices": {

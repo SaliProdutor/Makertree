@@ -12,10 +12,24 @@
         },
         "type": "UID"
       },
-      "categoria": {
+      "order": {
+        "type": "Number",
+        "config": {
+          "label": "order",
+          "placeholder": ""
+        }
+      },
+      "name": {
         "type": "Text",
         "config": {
-          "label": "Categoria",
+          "label": "Name",
+          "placeholder": ""
+        }
+      },
+      "slug_cliente": {
+        "type": "Text",
+        "config": {
+          "label": "Slug Cliente",
           "placeholder": ""
         }
       },

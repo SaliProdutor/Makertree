@@ -20,6 +20,20 @@
           "customtypes": ["cliente"]
         }
       },
+      "title_color": {
+        "type": "Color",
+        "config": {
+          "label": "Title Color",
+          "placeholder": ""
+        }
+      },
+      "header_color": {
+        "type": "Color",
+        "config": {
+          "label": "Header Color",
+          "placeholder": ""
+        }
+      },
       "background_color_primary": {
         "type": "Color",
         "config": {
@@ -31,6 +45,13 @@
         "type": "Color",
         "config": {
           "label": "Background Color Secundary",
+          "placeholder": ""
+        }
+      },
+      "category_title_color": {
+        "type": "Color",
+        "config": {
+          "label": "Category Title Color",
           "placeholder": ""
         }
       },
@@ -62,22 +83,20 @@
           "placeholder": ""
         }
       },
+      "border_color": {
+        "type": "Color",
+        "config": {
+          "label": "Border Color",
+          "placeholder": ""
+        }
+      },
       "border_radius": {
         "type": "Select",
         "config": {
           "label": "Border Radius",
           "placeholder": "",
-          "options": [".05", ".03", "1"],
-          "default_value": ".05"
-        }
-      },
-      "marketing": {
-        "type": "Boolean",
-        "config": {
-          "label": "Marketing",
-          "placeholder_false": "false",
-          "placeholder_true": "true",
-          "default_value": true
+          "options": ["0", ".3", ".5", "1"],
+          "default_value": "0"
         }
       },
       "slices": {

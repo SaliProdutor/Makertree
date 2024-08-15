@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image"
-import { DBusers } from "../DB/users"
+import { DBusers } from "@/app/DB/users"
 import { motion } from "framer-motion"
 
 export default function List(){

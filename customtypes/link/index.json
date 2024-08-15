@@ -20,6 +20,13 @@
           "thumbnails": []
         }
       },
+      "order": {
+        "type": "Text",
+        "config": {
+          "label": "Order",
+          "placeholder": ""
+        }
+      },
       "categoria": {
         "type": "Link",
         "config": {
@@ -28,12 +35,26 @@
           "customtypes": ["categoria"]
         }
       },
+      "slug_categoria": {
+        "type": "Text",
+        "config": {
+          "label": "Slug Categoria",
+          "placeholder": ""
+        }
+      },
       "cliente": {
         "type": "Link",
         "config": {
           "label": "Cliente",
           "select": "document",
           "customtypes": ["cliente"]
+        }
+      },
+      "slug_client": {
+        "type": "Text",
+        "config": {
+          "label": "Slug Client",
+          "placeholder": ""
         }
       },
       "label": {
@@ -84,7 +105,7 @@
         "config": {
           "label": "Border Radius",
           "placeholder": "",
-          "options": [".03", ".05", "1"]
+          "options": ["0", ".3", ".5", "1"]
         }
       },
       "slices": {
