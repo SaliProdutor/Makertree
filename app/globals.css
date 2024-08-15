@@ -40,51 +40,51 @@ body{
 }
 
 .TextoPrimary{
-  color: var(--title-color) !important;
+  color: var(--title-color);
 }
 
 .CategoryTitleColor{
-  color: var(--category-title-color) !important;
+  color: var(--category-title-color);
 }
 
 .HeaderColor{
-  background-color: var(--header-color) !important;
+  background-color: var(--header-color);
 }
 
 
 .BorderColor{
-  border-color: var(--border-color) !important;
-  color: var(--button-label-color) !important;
+  border-color: var(--border-color);
+  color: var(--button-label-color);
 }
 
 .BackgroundPrimary{
-  background-color: var(--background-primary) !important;
+  background-color: var(--background-primary);
 }
 
 .BackgroundSecondary{
-  background-color: var(--background-secondary) !important;
+  background-color: var(--background-secondary);
 }
 
 .ButtonTheme{
-  background-color: var(--button-color) !important;
+  background-color: var(--button-color);
 }
 
 .Texto{
-  color: var(--button-label-color) !important;
+  color: var(--button-label-color);
 }
 
 @media (min-width:1025px) {
   .ButtonTheme:hover{
-    background-color: var(--button-color-hover) !important;
+    background-color: var(--button-color-hover);
   }
 
   .ButtonTheme:hover{
-    color: var(--button-label-color-hover) !important;
+    color: var(--button-label-color-hover);
   }
 }
 
 .BorderRadius{
-  border-radius: var(--border-radius) !important;
+  border-radius: var(--border-radius);
 }
 
 body, input, textarea, button {
