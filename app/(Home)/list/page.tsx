@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { createClient } from "@/prismicio";
+import { Footer } from "@/app/_components/footer";
 
 export default async function List(){
     const client = createClient();
@@ -8,7 +9,7 @@ export default async function List(){
     const clientes = await client.getAllByType('cliente');
 
     return(
-        <main className="flex flex-col flex-1 w-full items-center justify-center">
+        <main className="flex flex-col px-4 flex-1 w-full items-center justify-center">
             <div className="max-w-[1280px] items-center flex flex-col w-full flex-1 lg:px-10 lg:py-20">
                 <span className="font-normal text-gray-200 text-2xl text-center pt-20 lg:max-w-[20rem]">Para onde você <h1 className="font-bold text-blue text-3xl text-center pb-20 lg:max-w-[20rem]">deseja ir?</h1></span>
                 <div className={clientes.length > 2 ? 'grid lg:grid-cols-3 grid-cols-1 w-full gap-10 justify-center pb-20' : `grid lg:grid-cols-${clientes.length} grid-cols-1 w-full gap-10 justify-center pb-20`}>
@@ -33,6 +34,7 @@ export default async function List(){
                 }
                 </div>
             </div>
+            <Footer/>
         </main>
     )
 }

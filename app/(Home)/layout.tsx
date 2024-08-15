@@ -22,7 +22,6 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className=" min-h-screen flex flex-1 justify-between flex-col">
         {children}
-        <Footer/>
       </body> 
     </html>
   );

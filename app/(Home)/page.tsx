@@ -1,6 +1,7 @@
 'use client'
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react";
+import { Footer } from "../_components/footer";
 
 const TextAnimation = ({ text }:any) => {
   const [displayText, setDisplayText] = useState("");
@@ -33,7 +34,7 @@ const TextAnimation = ({ text }:any) => {
 export default function Home() {
   
   return (
-    <main className="flex max-w-screen flex-1 items-center justify-center !overflow-x-hidden">
+    <main className="flex flex-col max-w-screen max-h-screen flex-1 items-center justify-between !overflow-x-hidden">
       <div className="flex flex-1 flex-col items-center justify-center p-24">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
@@ -49,6 +50,7 @@ export default function Home() {
         transition={{ delay: 1, duration: .5 }}
         href="/list" className="w-[15rem] text-[1rem] uppercase text-purple-dark border border-purple-dark py-2 px-4 rounded-lg mt-[.5rem] hover:bg-purple hover:text-gray-100 hover:border-purple duration-500 text-center">Acessar Agora</motion.a>
       </div>
+      <Footer/>
     </main>
   );
 }
