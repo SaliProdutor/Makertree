@@ -54,29 +54,29 @@ const LoadingWrapper = ({ delay, color, children }: LoadingWrapperProps) => {
     }, [delay]);
 
     return (
-        <div className="flex w-screen justify-center">
-            <AnimatePresence>
-                {loading && (
-                    <motion.div
-                        key="loading"
-                        initial={{ opacity: 1 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <Loading color={color} />
-                    </motion.div>
-                )}
-            </AnimatePresence>
+        <>
+        {loading && (
+            <motion.div
+                key="loading"
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className='flex flex-1'
+            >
+                <Loading color={color} />
+            </motion.div>
+        )}
             <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 2.5 }}
-                className={loading ? 'absolute inset-0' : 'flex flex-col'} 
+                transition={{ duration: 1, delay: 2.5 }} 
+                className='relative'
             >
                 {children}
             </motion.div>
-        </div>
+        </>
+        
     );
 };
 

@@ -374,6 +374,18 @@ interface ConfiguracoesDocumentData {
   cliente: prismic.ContentRelationshipField<"cliente">;
 
   /**
+   * Visible Header field in *Configurações*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: configuracoes.visible_header
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  visible_header: prismic.BooleanField;
+
+  /**
    * Title Color field in *Configurações*
    *
    * - **Field Type**: Color
@@ -793,15 +805,15 @@ interface LinkDocumentData {
   label: prismic.KeyTextField;
 
   /**
-   * URL field in *Link*
+   * URL_link field in *Link*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: link.url
+   * - **API ID Path**: link.url_link
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  url: prismic.LinkField;
+  url_link: prismic.KeyTextField;
 
   /**
    * Background Color field in *Link*

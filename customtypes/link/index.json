@@ -64,12 +64,11 @@
           "placeholder": ""
         }
       },
-      "url": {
-        "type": "Link",
+      "url_link": {
+        "type": "Text",
         "config": {
-          "label": "URL",
-          "placeholder": "",
-          "select": null
+          "label": "URL_link",
+          "placeholder": ""
         }
       },
       "background_color": {

@@ -20,6 +20,15 @@
           "customtypes": ["cliente"]
         }
       },
+      "visible_header": {
+        "type": "Boolean",
+        "config": {
+          "label": "Visible Header",
+          "placeholder_false": "false",
+          "placeholder_true": "true",
+          "default_value": true
+        }
+      },
       "title_color": {
         "type": "Color",
         "config": {

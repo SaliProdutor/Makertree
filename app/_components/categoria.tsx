@@ -33,7 +33,7 @@ export async function Categorias({ categoria, slug_categoria, userId}: Carrossel
 
     return (
 
-        <div className='w-full px-4'>
+        <div className='w-full h-auto px-4'>
             
             {links && links.length > 0 && category && ( 
                 <h1 className="CategoryTitleColor font-bold mb-4 mt-6 text-center cursor-default">{category}</h1>
@@ -44,7 +44,7 @@ export async function Categorias({ categoria, slug_categoria, userId}: Carrossel
                     {links.map((link, index) => (
                         <a 
                         key={link.id} 
-                        href={link.data.url.link_type} 
+                        href={link.data.url_link || ''} 
                         target="_blank" 
                         className="
                             flex 
