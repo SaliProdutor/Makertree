@@ -16,7 +16,13 @@ export default async function List(){
                 clientes.map((item, index) => (
                     <a target="_blank" key={item.id} href={`/${item.data.slug}`}>
                         <div className="flex flex-1 gap-5 justify-start items-center rounded-lg px-4 py-4 bg-gray-400 lg:hover:bg-purple lg:hover:scale-105 transition-all duration-500">
-                            <Image src={item.data.logo.url || '/icon.png'} className="rounded-lg border-[.2rem] border-purple-dark" width={80} height={80} alt={`Imagem logo empresa ${item.data.name}`}/>
+                            <Image 
+                                src={item.data.logo.url || '/icon.png'} 
+                                className="rounded-lg object-cover bg-cover border-[.2rem] w-[5rem] h-[5rem] border-purple-dark" 
+                                width={80} 
+                                height={80} 
+                                alt={`Imagem logo empresa ${item.data.name}`}
+                            />
                             <div className=" flex max-w-full flex-col gap-2">
                                 <h2 className="text-center text-white flex">{item.data.name}</h2>
                                 <p className="text-center text-gray-200 flex">{item.data.description}</p>
