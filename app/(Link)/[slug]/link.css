@@ -36,7 +36,7 @@ html{
 
 body{
   -webkit-font-smoothing: antialiased;
-  background-color: var(--background-primary);
+  background-color: var(--header-color);
 }
 
 .TextoPrimary{
