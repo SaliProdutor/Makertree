@@ -32,6 +32,7 @@ p{
 }
 html{
   overflow-x: hidden !important;
+  background-color: var(--header-color);
 }
 
 body{
