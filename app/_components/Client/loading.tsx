@@ -12,28 +12,11 @@ interface LoadProps {
 }
 
 const Loading = ({ color }: LoadProps) => {
-    if (color === 1) {
-        return (
-            <div className="w-screen h-screen flex flex-1 bg-gray-700 items-center justify-center fixed inset-0 z-50">
-                <Lottie animationData={Load1} className="flex justify-center items-center w-10 h-auto" loop={true} />
-            </div>
-        );
-    }
-    if (color === 2) {
-        return (
-            <div className="w-screen h-screen flex flex-1 bg-gray-700 items-center justify-center fixed inset-0 z-50">
-                <Lottie animationData={Load2} className="flex justify-center items-center w-10 h-auto" loop={true} />
-            </div>
-        );
-    }
-    if (color === 3) {
-        return (
-            <div className="w-screen h-screen flex flex-1 bg-gray-700 items-center justify-center fixed inset-0 z-50">
-                <Lottie animationData={Load3} className="flex justify-center items-center w-10 h-auto" loop={true} />
-            </div>
-        );
-    }
-    return null;
+    return (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-700">
+            <Lottie animationData={color === 1 ? Load1 : color === 2 ? Load2 : Load3} className="w-10 h-auto" loop={true} />
+        </div>
+    );
 };
 
 interface LoadingWrapperProps {
@@ -53,23 +36,29 @@ const LoadingWrapper = ({ delay, color, children }: LoadingWrapperProps) => {
         return () => clearTimeout(timer);
     }, [delay]);
 
+    useEffect(() => {
+        if (!loading) {
+            window.scrollTo(0, 0);
+        }
+    }, [loading]);
+
     return (
         <>
         {loading && (
             <motion.div
-                key="loading"
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className='flex flex-1'
-            >
-                <Loading color={color} />
-            </motion.div>
+            key="loading"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="fixed inset-0 z-50 flex items-center justify-center"
+        >
+            <Loading color={color} />
+        </motion.div>
         )}
             <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1 }} 
                 className='relative'
             >
