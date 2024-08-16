@@ -2,9 +2,6 @@ import { createClient } from "@/prismicio";
 import HeaderClient from "@/app/_components/Server/header";
 import { Footer } from "@/app/_components/footer";
 import Theme from "@/app/_components/Server/themeServer";
-import * as prismic from "@prismicio/client"
-import { PrismicNextLink } from "@prismicio/next";
-import { PrismicRichText } from "@prismicio/react";
 import LoadingWrapper from "@/app/_components/Client/loading";
 import { Categorias } from "@/app/_components/categoria";
 import Link from "next/link";
@@ -61,9 +58,9 @@ export default async function LinkPage({ params }: PageProps){
         <main className="BackgroundPrimary min-w-screen min-h-screen justify-between flex flex-col items-center">
             <Theme uid={params.slug} />
             {(billing == 'Ativo' || billing == 'Pendente') && 
-            <div className="flex-1 mt-2 mx-2 lg:mt-20 lg:mx-0">
+            <div className="flex-1 lg:mt-20 lg:mx-0">
                 <LoadingWrapper delay={1} color={2}>
-                    <div className="BackgroundSecondary lg:min-w-[30rem] lg:max-w-[30rem] min-w-[23rem] max-w-[23rem] BorderRadius pb-5 shadow-lg overflow-hidden">
+                    <div className="BackgroundSecondary w-screen lg:min-w-[30rem] lg:max-w-[30rem] BorderRadiusContent pb-5 lg:shadow-lg overflow-hidden">
                         {billing == 'Pendente' &&
                             <div className="bg-yellow-300 flex justify-center items-center">
                                 <p className="!font-bold py-2">Atenção! Seu link ficará inativo em breve.</p>

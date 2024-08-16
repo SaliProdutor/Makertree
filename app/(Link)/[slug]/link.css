@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #262626;
+  border-radius: 30px;
+}
+
+*::-webkit-scrollbar-thumb{
+  background: #939393;
+  border-radius: 30px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h2{
+  font-weight: bold !important;
+  font-size: 1.2rem;
+}
+p{
+  font-weight: 400 !important;
+  font-size: .8rem;
+}
+html{
+  overflow-x: hidden !important;
+}
+
+body{
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--background-primary);
+}
+
+.TextoPrimary{
+  color: var(--title-color);
+}
+
+.CategoryTitleColor{
+  color: var(--category-title-color);
+}
+
+.HeaderColor{
+  background-color: var(--header-color);
+}
+
+
+.BorderColor{
+  border-color: var(--border-color);
+  color: var(--button-label-color);
+}
+
+.BackgroundPrimary{
+  background-color: var(--background-primary);
+}
+
+.BackgroundSecondary{
+  background-color: var(--background-primary);
+}
+
+.ButtonTheme{
+  background-color: var(--button-color);
+}
+
+.Texto{
+  color: var(--button-label-color);
+}
+
+@media (min-width:1025px) {
+  .BackgroundSecondary{
+    background-color: var(--background-secondary);
+  }
+  .ButtonTheme:hover{
+    background-color: var(--button-color-hover);
+  }
+
+  .ButtonTheme:hover{
+    color: var(--button-label-color-hover);
+  }
+
+  .BorderRadiusContent{
+    border-radius: var(--border-radius);
+  }
+}
+
+.BorderRadius{
+  border-radius: var(--border-radius);
+}
+
+body, input, textarea, button {
+  font-family: ‘Inter’, sans-serif; 
+}
+
+
+
