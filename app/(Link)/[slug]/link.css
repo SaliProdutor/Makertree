@@ -70,6 +70,10 @@ body{
   background-color: var(--button-color);
 }
 
+.TextoTitle{
+  color: var(--title-color);
+}
+
 .Texto{
   color: var(--button-label-color);
 }

@@ -25,8 +25,8 @@ const HeaderClient = ({ url, alt, title, description, visible }: HeaderProps) =>
                     />
                 </div>
                 <div>
-                    <h1 className={'font-bold text-2xl cursor-default Texto'}>{title || ''}</h1>
-                    <p className="TextoPrimary cursor-default Texto opacity-40">{description || ''}</p>
+                    <h1 className={'font-bold text-2xl cursor-default TextoTitle'}>{title || ''}</h1>
+                    <p className="TextoPrimary cursor-default TextoTitle opacity-40">{description || ''}</p>
                 </div> 
             </div>
         </div>
