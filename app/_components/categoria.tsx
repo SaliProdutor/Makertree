@@ -53,7 +53,7 @@ export async function Categorias({ categoria, slug_categoria, userId }: Carrosse
         };
 
         // Define a classe padrão
-        const defaultClassName = 'flex font-bold flex-1 justify-center items-center my-4 ButtonTheme duration-1000 lg:hover:shadow-2xl shadow-blue py-4 px-8 rounded-lg';
+        const defaultClassName = 'flex font-bold flex-1 Texto justify-center items-center my-4 ButtonTheme duration-1000 lg:hover:shadow-2xl shadow-blue py-4 px-8 rounded-lg';
 
         // Retorna um objeto contendo os dados mapeados
         return {
